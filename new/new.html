@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Institution of Engineers (India)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #e7473c;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        header img {
+            height: 80px;
+            margin-right: 10px;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 0.5em 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 2px solid #ddd;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #e7473c;
+            color: white;
+        }
+        .container {
+            margin: 10px auto;
+            width: 90%;
+            max-width: 1200px;
+            flex: 1;
+        }
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .photo-gallery {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .photo-gallery img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+            object-fit: cover;
+        }
+        .photo-gallery img.active {
+            opacity: 1;
+        }
+        .welcome-message, .history {
+            flex: 1;
+            text-align: left;
+        }
+        .welcome-message h2, .history h2 {
+            color: #e7473c;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            width: 100%;
+            margin-top: auto;
+        }
+        .dropdown-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            display: flex;
+            flex-direction: row;
+        }
+        .dropdown-menu a {
+            padding: 15px;
+        }
+        .quick-links-menu {
+            display: none;
+            position: absolute;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex-direction: column;
+        }
+        .quick-links-menu a {
+            padding: 10px 20px;
+        }
+        .quick-links-menu a:hover {
+            background-color: #e7473c;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            nav {
+                justify-content: space-between;
+            }
+            nav a {
+                display: none;
+            }
+            .dropdown-icon {
+                display: block;
+            }
+            .dropdown-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            .dropdown-menu.active {
+                display: flex;
+            }
+            .main-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .photo-gallery {
+                order: 1;
+                margin-bottom: 20px;
+            }
+            .welcome-message {
+                order: 0;
+                margin-top: 0;
+            }
+            .history {
+                order: 2;
+            }
+            .welcome-message p, .history p {
+                font-size: 14px;
+            }
+            .quick-links-menu {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo1.webp" alt="The Institution of Engineers (India) Logo">
+        <h1>The Institution of Engineers (India)</h1>
+    </header>
+
+    <nav>
+        <div class="dropdown-icon">&#8942;</div>
+        <div class="dropdown-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#membership">Membership</a>
+            <a href="#events">Events</a>
+            <a href="#socials">Socials</a>
+            <div class="quick-links-dropdown">
+                <a href="#quick-links">Quick Links &#x25BC;</a>
+                <div class="quick-links-menu">
+                    <a href="#link1">Link 1</a>
+                    <a href="#link2">Link 2</a>
+                    <a href="#link3">Link 3</a>
+                    <a href="#link4">Link 4</a>
+                    <a href="#link5">Link 5</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="welcome-message">
+                <h2>WELCOME DEAR FELLOW ENGINEERS!</h2>
+                <p>
+                    The Student's Chapter of The Institution of Engineers (GNDEC) invites you to join this prestigious organization. Membership opens avenues for professional growth and knowledge assimilation. Join us to serve our country and achieve glory.
+                    <br /><br />
+                    With over a century of service, the Institution has a strong national and international presence through numerous centers and chapters. It encompasses various engineering disciplines and offers professional certifications.
+                    <br /><br />
+                    The Institution of Engineers (India) represents India in several international bodies and conducts examinations recognized as equivalent to engineering degrees. It also publishes peer-reviewed journals and organizes technical activities.
+                </p>
+            </div>
+            <div class="photo-gallery">
+                <img src="image1.jpg" alt="Engineering Image 1" class="active">
+                <img src="image2.jpg" alt="Technology Image 2">
+                <img src="image3.jpg" alt="Education Image 3">
+                <img src="image4.jpg" alt="Innovation Image 4">
+            </div>
+            <div class="history">
+                <h2>HISTORY</h2>
+                <p>
+                    Genesis: Post-World War I, industrialization in India led to the need for quality assurance in engineering. The Government of India formed the Indian Industrial Commission, which recommended establishing a professional engineering institution.
+                    <br />
+                    The Indian Society of Engineers was formed in 1919, later renamed The Institution of Engineers (India). The organization has since grown to support engineering excellence and professional development.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 The Institution of Engineers (India). All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.photo-gallery img');
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 6000); // Change image every 6 seconds
+
+        const dropdownIcon = document.querySelector('.dropdown-icon');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        const quickLinksDropdown = document.querySelector('.quick-links-dropdown');
+        const quickLinksMenu = document.querySelector('.quick-links-menu');
+
+        dropdownIcon.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('active');
+        });
+
+        quickLinksDropdown.addEventListener('click', () => {
+            quickLinksMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
